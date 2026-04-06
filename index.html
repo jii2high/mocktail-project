@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Sunrise Mocktail – A refreshing, handcrafted non-alcoholic drink bursting with tropical flavors. Order yours today via WhatsApp." />
+  <title>Sunrise Mocktail – Crafted for the Bold</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+  <!-- ═══════════ LOADER ═══════════ -->
+  <div id="loader">
+    <div class="loader-inner">
+      <p class="loader-label">Sunrise Mocktail</p>
+      <div class="loader-bar-track">
+        <div class="loader-bar-fill" id="loader-fill"></div>
+      </div>
+      <p class="loader-percent" id="loader-percent">0%</p>
+    </div>
+  </div>
+
+  <!-- ═══════════ NAVBAR ═══════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo"><i class="fa-solid fa-sun" aria-hidden="true"></i> Sunrise</a>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#order" class="nav-cta">Order Now</a></li>
+      </ul>
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars" id="hamburger-icon"></i>
+      </button>
+    </div>
+    <div class="nav-mobile" id="nav-mobile">
+      <a href="#hero">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#order">Order Now</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════ HERO (canvas scroll sequence) ═══════════ -->
+  <section id="hero" class="hero-section">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-overlay">
+      <div class="hero-text">
+        <span class="hero-eyebrow">Handcrafted Non-Alcoholic</span>
+        <h1 class="hero-title">Sunrise<br /><em>Mocktail</em></h1>
+        <p class="hero-sub">A burst of tropical warmth in every sip.</p>
+        <a href="#menu" class="btn btn-primary hero-btn">Explore the Menu</a>
+      </div>
+      <div class="hero-scroll-hint">
+        <span>scroll to experience</span>
+        <i class="fa-solid fa-chevron-down scroll-arrow" aria-hidden="true"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ MENU SECTION ═══════════ -->
+  <section id="menu" class="section menu-section">
+    <div class="container">
+      <span class="section-eyebrow">Our Selection</span>
+      <h2 class="section-title">The Menu</h2>
+      <p class="section-sub">Each mocktail is crafted with fresh ingredients, no alcohol – pure flavour.</p>
+
+      <div class="menu-grid">
+
+        <div class="menu-card featured">
+          <div class="menu-card-badge">Fan Favourite</div>
+          <div class="menu-card-icon"><i class="fa-solid fa-sun" aria-hidden="true"></i></div>
+          <h3>Sunrise Classic</h3>
+          <p>Orange juice, grenadine, passion fruit syrup &amp; soda water. A layered beauty you can taste.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">Rp 35.000</span>
+            <a href="#order" class="btn btn-sm">Order</a>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-icon"><i class="fa-solid fa-lemon" aria-hidden="true"></i></div>
+          <h3>Tropical Storm</h3>
+          <p>Mango, pineapple, coconut cream &amp; lime. Island vibes in a glass.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">Rp 38.000</span>
+            <a href="#order" class="btn btn-sm">Order</a>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-icon"><i class="fa-solid fa-leaf" aria-hidden="true"></i></div>
+          <h3>Garden Fresh</h3>
+          <p>Cucumber, mint, lemon &amp; elderflower tonic. Cool, crisp, reviving.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">Rp 33.000</span>
+            <a href="#order" class="btn btn-sm">Order</a>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-icon"><i class="fa-solid fa-seedling" aria-hidden="true"></i></div>
+          <h3>Berry Bliss</h3>
+          <p>Strawberry, raspberry, hibiscus &amp; sparkling water. Vivid and luscious.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">Rp 36.000</span>
+            <a href="#order" class="btn btn-sm">Order</a>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-icon"><i class="fa-solid fa-spa" aria-hidden="true"></i></div>
+          <h3>Floral Dream</h3>
+          <p>Rose water, lychee, lavender syrup &amp; tonic. Delicate and enchanting.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">Rp 37.000</span>
+            <a href="#order" class="btn btn-sm">Order</a>
+          </div>
+        </div>
+
+        <div class="menu-card">
+          <div class="menu-card-icon"><i class="fa-solid fa-snowflake" aria-hidden="true"></i></div>
+          <h3>Midnight Zest</h3>
+          <p>Blue butterfly pea, ginger, lime &amp; soda. A colour-changing spectacle.</p>
+          <div class="menu-card-footer">
+            <span class="menu-price">Rp 39.000</span>
+            <a href="#order" class="btn btn-sm">Order</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ ABOUT SECTION ═══════════ -->
+  <section id="about" class="section about-section">
+    <div class="container about-grid">
+      <div class="about-image-wrap">
+        <img src="mocktail.png" alt="Sunrise Mocktail bottle" class="about-img" />
+        <div class="about-img-glow"></div>
+      </div>
+      <div class="about-content">
+        <span class="section-eyebrow">Our Story</span>
+        <h2 class="section-title">Made with<br /><em>Passion &amp; Purpose</em></h2>
+        <p>Sunrise Mocktail was born from a simple idea: everyone deserves a beautiful, flavourful drink – without
+          compromise. We source fresh tropical fruits and natural botanicals to craft experiences, not just beverages.
+        </p>
+        <p>No artificial colours, no alcohol, no compromise on quality. Just sunlit flavours in every bottle.</p>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-num">96<span class="stat-plus">+</span></span>
+            <span class="stat-label">Happy Customers</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">6</span>
+            <span class="stat-label">Signature Flavours</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num">100<span class="stat-plus">%</span></span>
+            <span class="stat-label">Natural Ingredients</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CTA / ORDER SECTION ═══════════ -->
+  <section id="order" class="section cta-section">
+    <div class="cta-bg-glow"></div>
+    <div class="container cta-inner">
+      <span class="section-eyebrow">Ready to sip?</span>
+      <h2 class="cta-title">Order Your Sunrise<br />Mocktail Today</h2>
+      <p class="cta-sub">Fast delivery, fresh ingredients, pure joy. Chat with us on WhatsApp and get your order within
+        the hour.</p>
+      <a id="whatsapp-btn"
+        href="https://wa.me/6281511034467?text=Hi!%20I'd%20like%20to%20order%20a%20Sunrise%20Mocktail%20🌅"
+        target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+        <i class="fa-brands fa-whatsapp wa-icon" aria-hidden="true"></i>
+        Order via WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-logo"><i class="fa-solid fa-sun" aria-hidden="true"></i> Sunrise Mocktail</p>
+      <p class="footer-copy">© 2026 Sunrise Mocktail. All rights reserved. Crafted with love.</p>
+      <div class="footer-links">
+        <a href="#hero">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#order">Order</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>
