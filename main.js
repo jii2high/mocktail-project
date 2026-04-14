@@ -1,22 +1,14 @@
-/* ═══════════════════════════════════════════
-   SUNRISE MOCKTAIL — main.js
-   Canvas scroll animation · Image preloader
-   ═══════════════════════════════════════════ */
-
+// IMAGE SEQUENCE SCROLL ANIMATION
 (function () {
   'use strict';
 
-  /* ─────────────────────────────────────────
-     CONFIG
-  ───────────────────────────────────────── */
+  // CONFIG
   const TOTAL_FRAMES = 96;
   const FRAME_FOLDER = 'frames/';
   const FRAME_PREFIX = 'ezgif-frame-';
-  const FRAME_EXT    = '.png';
+  const FRAME_EXT = '.jpg';
 
-  /* ─────────────────────────────────────────
-     UTILS
-  ───────────────────────────────────────── */
+  // UTILS
   function padNum(n) {
     return String(n).padStart(3, '0');
   }
@@ -26,23 +18,19 @@
     return FRAME_FOLDER + FRAME_PREFIX + padNum(index) + FRAME_EXT;
   }
 
-  /* ─────────────────────────────────────────
-     ELEMENTS
-  ───────────────────────────────────────── */
-  const loader      = document.getElementById('loader');
-  const loaderFill  = document.getElementById('loader-fill');
-  const loaderPct   = document.getElementById('loader-percent');
-  const canvas      = document.getElementById('hero-canvas');
-  const ctx         = canvas.getContext('2d');
-  const navbar      = document.getElementById('navbar');
-  const hamburger   = document.getElementById('hamburger');
-  const navMobile   = document.getElementById('nav-mobile');
+  // ELEMENTS
+  const loader = document.getElementById('loader');
+  const loaderFill = document.getElementById('loader-fill');
+  const loaderPct = document.getElementById('loader-percent');
+  const canvas = document.getElementById('hero-canvas');
+  const ctx = canvas.getContext('2d');
+  const navbar = document.getElementById('navbar');
+  const hamburger = document.getElementById('hamburger');
+  const navMobile = document.getElementById('nav-mobile');
 
-  /* ─────────────────────────────────────────
-     CANVAS SIZING
-  ───────────────────────────────────────── */
+  // CANVAS SIZING
   function resizeCanvas() {
-    canvas.width  = window.innerWidth;
+    canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
   }
 
@@ -52,9 +40,7 @@
     renderFrame(currentFrameIndex);
   });
 
-  /* ─────────────────────────────────────────
-     IMAGE PRELOADING
-  ───────────────────────────────────────── */
+  // IMAGE PRELOADING
   const images = new Array(TOTAL_FRAMES + 1); // 1-indexed, [0] unused
   let loadedCount = 0;
   let currentFrameIndex = 1;
@@ -62,7 +48,7 @@
   function updateLoader(count) {
     const pct = Math.round((count / TOTAL_FRAMES) * 100);
     loaderFill.style.width = pct + '%';
-    loaderPct.textContent  = pct + '%';
+    loaderPct.textContent = pct + '%';
   }
 
   function preloadImages() {
@@ -85,9 +71,7 @@
     });
   }
 
-  /* ─────────────────────────────────────────
-     CANVAS RENDERING
-  ───────────────────────────────────────── */
+  // CANVAS RENDERING
   function renderFrame(index) {
     const img = images[index];
     if (!img || !img.complete || !img.naturalWidth) return;
@@ -108,13 +92,11 @@
     ctx.drawImage(img, ox, oy, sw, sh);
   }
 
-  /* ─────────────────────────────────────────
-     SCROLL → FRAME MAPPING
-  ───────────────────────────────────────── */
+  // SCROLL → FRAME MAPPING
   function onScroll() {
     const heroSection = document.getElementById('hero');
-    const scrollTop   = window.scrollY;
-    const maxScroll   = heroSection.offsetHeight - window.innerHeight;
+    const scrollTop = window.scrollY;
+    const maxScroll = heroSection.offsetHeight - window.innerHeight;
 
     const progress = Math.min(Math.max(scrollTop / maxScroll, 0), 1);
     // Frame index: 1 at progress=0, TOTAL_FRAMES at progress=1
@@ -126,16 +108,12 @@
     }
   }
 
-  /* ─────────────────────────────────────────
-     NAVBAR SCROLL EFFECT
-  ───────────────────────────────────────── */
+  // NAVBAR SCROLL EFFECT
   function onScrollNavbar() {
     navbar.classList.toggle('scrolled', window.scrollY > 60);
   }
 
-  /* ─────────────────────────────────────────
-     REVEAL ON SCROLL (Intersection Observer)
-  ───────────────────────────────────────── */
+  // REVEAL ON SCROLL (Intersection Observer)
   function initReveal() {
     const targets = document.querySelectorAll(
       '.menu-card, .about-content, .about-image-wrap, .cta-inner, .section-eyebrow, .section-title, .section-sub'
@@ -154,9 +132,7 @@
     targets.forEach(el => observer.observe(el));
   }
 
-  /* ─────────────────────────────────────────
-     HAMBURGER MENU
-  ───────────────────────────────────────── */
+  // HAMBURGER MENU
   const hamburgerIcon = document.getElementById('hamburger-icon');
 
   hamburger.addEventListener('click', () => {
@@ -181,9 +157,7 @@
     });
   });
 
-  /* ─────────────────────────────────────────
-     INIT
-  ───────────────────────────────────────── */
+  // INIT
   async function init() {
     // Lock scroll during load
     document.body.style.overflow = 'hidden';
@@ -201,8 +175,8 @@
     renderFrame(1);
 
     // Attach listeners
-    window.addEventListener('scroll', onScroll,        { passive: true });
-    window.addEventListener('scroll', onScrollNavbar,  { passive: true });
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('scroll', onScrollNavbar, { passive: true });
 
     // Initial states
     onScrollNavbar();
